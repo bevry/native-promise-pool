@@ -99,6 +99,7 @@
     "eslint": "^5.9.0",
     "joe": "^2.0.2",
     "joe-reporter-console": "^2.0.2",
+    "logger-clearable": "^1.0.0",
     "projectz": "^1.4.0",
     "surge": "^0.20.1",
     "valid-directory": "^1.0.0"
