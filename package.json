@@ -94,6 +94,7 @@
   },
   "devDependencies": {
     "assert-helpers": "^4.5.1",
+    "chalk": "^2.4.1",
     "documentation": "^8.1.2",
     "eslint": "^5.9.0",
     "joe": "^2.0.2",

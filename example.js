@@ -1,5 +1,6 @@
 'use strict'
 
+const chalk = require('chalk')
 const PromisePool = require('./')
 
 function time () {
@@ -10,19 +11,15 @@ function time () {
 const pool = new PromisePool(2)
 
 for (let i = 0; i < 10; i++) {
-	setTimeout(function () {
-		for (let ii = 0; ii < 10; ii++) {
-			pool.open(() => new Promise(function (resolve) {
-				const delay = ii * 100
-				const name = `Task ${i}:${ii}\tdelay ${delay}ms`
-				console.log(time(), '\tstarted\t\t', name)
-				setTimeout(function () {
-					console.log(time(), '\tfinished\t', name)
-					resolve(name)
-				}, delay)
-			})).then(function (result) {
-				console.log(time(), '\tresult\t\t', result)
-			})
-		}
-	}, i * 1000)
+	pool.open(() => new Promise(function (resolve) {
+		const delay = 10000
+		const name = `Task ${i}\t\tdelay ${delay}ms`
+		console.log(time(), '\t' + chalk.green('started') + '\t\t' + name)
+		setTimeout(function () {
+			console.log(time(), '\t' + chalk.red('finished') + '\t' + name)
+			resolve(name)
+		}, delay)
+	})).then(function (result) {
+		console.log(time(), '\t' + chalk.blue('result') + '\t\t' + result)
+	})
 }
