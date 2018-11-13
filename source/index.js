@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = class ArrayPromisePool {
+module.exports = class PromisePool {
 	static create (...args) {
 		return new this(...args)
 	}
