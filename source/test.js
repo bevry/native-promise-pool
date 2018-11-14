@@ -3,6 +3,7 @@
 const { equal, deepEqual } = require('assert-helpers')
 const joe = require('joe')
 
+const PromiseClass = Promise.prototype.finally ? Promise : require('bluebird')
 const PromisePool = require('./index.js')
 
 const pools = 2
@@ -21,7 +22,7 @@ const expectedOL = ['task 1', 'task 2', 'intended rejection', 'task 3', 'task 4'
 const expectedUL = ['task 2', 'intended rejection', 'task 1', 'task 3', 'task 5', 'task 6', 'task 4']
 
 joe.suite('native-promise-pool', function (suite, test) {
-	const pool = PromisePool.create({ concurrency: 2 })
+	const pool = PromisePool.create({ concurrency, PromiseClass })
 	suite('works', function (suite, test) {
 		for (let i = 0; i < pools; ++i) {
 			test(`pool ${i}`, function (done) {

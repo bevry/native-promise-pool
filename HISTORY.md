@@ -1,4 +1,4 @@
 # History
 
-## v1.0.0 2015 October 25
-- Some feature
+## v1.0.0 2018 November 14
+- Initial stable release

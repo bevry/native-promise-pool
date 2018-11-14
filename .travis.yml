@@ -1,10 +1,20 @@
 sudo: false
 language: node_js
 node_js:
+- '0.8'
+- '0.10'
+- '0.12'
+- '4'
+- '6'
+- '8'
 - '10'
 matrix:
   fast_finish: true
-  allow_failures: []
+  allow_failures:
+  - node_js: '0.8'
+  - node_js: '0.10'
+  - node_js: '0.12'
+  - node_js: '4'
 cache:
   directories:
   - "$HOME/.npm"
@@ -19,4 +29,4 @@ after_success:
 notifications:
   email:
     recipients:
-      secure: QVmBDt527EZtZmdqJhDpU1cgoWFY/dPFh97b1DGYhmOoBPKSdavMhyIq0VQ1FxaFNnoXKTroHweGjvFXxq7TbZhpzFWaARnh4XAD6g/AyUU7vzJmD77dmQjgHKD5kTozJO875eOXk+lK7Qc5/OLAU9dHlSHUmr2LKdFIWcnQqHPtFTBKrLurds3qLdDw4gaLf5J7bsTO4EoHKoNiSmVhpL598SB2HswXq2Eclhv+GCF4Ri5prrdhXdfUzAvUQSRD2cB9LwdaPC4xOzyQbWGGoWsChlD/QuFZDqU1g89H+Knq4Rd/u/lmaHJxuj/uQNljxN95A9iyLGaM1R8GTfsp+18deJtgZjUvFeYZwrARtO24JNaVmzsAWnB07bDiA2+Nwu6dLvfwFls6jcllpNq3zs74lnBeup5TML9tPVvnbyoWRws8oZb2d1+ON7VmfkANzO1H9I/kUjhlK0DFL0v9JB7DhxlzqtXQetXiDbxuMbaIEGcgDy0Ay7IUL4Ln0uWfboO4YuS5Ufj31DTfR0vh1EsFdigxeOdBvhikm0RwNheo/wZsveMkWKFLHYIvSaK9l2BBR6Lm0OABxt44MJzJQ9bhFoSqzaQuKg82xybM3vBl3rEZRJhf5cZiyV9CafNKvxrqkme4mW5McAMI4/LrGuyKznl12ucUDBJ24CmkhjU=
+      secure: dMqFUpV786JnQHl3hgwnoBLMAJu69GJ++yMarltzlCZAbgpzEdu+nQtDVxICGBdtNfKTIaPYUDLBVENysJwAj3cTTbFI5psD+tiKUKIw00O9ozJdYlbxRFcnc0u7T7XLeEXHVtRT9XqwmL+Aqv/p48oTjEJb/2zFnPkPk7r/yFQUMRCi8jkpsrG52vYYcyW76pWcJNjHBQfShCz3tJp1oEu/i6/ZyL9K/Lig0ZAxw9ky1QjRv8y6yjRw1+Pkmt3/DAzmjskGQhLmcQU9mWchYTcIi3Ywqz+LxOSUIOckiE2o/ZGtMm3fUOiHDNf7kW3vMUcOHj0TRGF5r8gwSE4sEqFD983wKU3rC1GJha0nigXBvsEJ70uWSWbBpxT4pXjRbifGHOp5Ip1CwwKYaY95jFWkubEiLpgZAkjArcL2eSN/TN+xGCqmGNKfu5q9ES1ztUZEpadiF4MbcRUJ9h7Yfr6hB5Ra3QGpxshnH+xvdIJYdf3i/HkuFdAgfOHIRwYyTbI/N93yc0y/o9yQDAxY9lSyyntvk1oBLzvBJAb6zYFP6zGisMt62gFyEuwmr5DLYXdDJHq/AxVKFoEUm+JzMd+anfLuSGzwblIkNamv/hIKcCKu/bhcEcz6mo8NRGEEcqq41iJO80Jq/x4srkShbIDQH91v9GRQvCX9ZMkuvHw=

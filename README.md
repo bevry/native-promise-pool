@@ -29,7 +29,7 @@
 
 <!-- DESCRIPTION/ -->
 
-Create a pool of a specified concurrency that accepts promises
+Create a pool of a specified concurrency that accepts functions that return promises
 
 <!-- /DESCRIPTION -->
 
@@ -45,7 +45,7 @@ Create a pool of a specified concurrency that accepts promises
 <a href="http://browserify.org" title="Browserify lets you require('modules') in the browser by bundling up all of your dependencies"><h3>Browserify</h3></a><ul>
 <li>Install: <code>npm install --save native-promise-pool</code></li>
 <li>Module: <code>require('native-promise-pool')</code></li>
-<li>CDN URL: <code>//wzrd.in/bundle/native-promise-pool@0.0.1</code></li></ul>
+<li>CDN URL: <code>//wzrd.in/bundle/native-promise-pool@1.0.0</code></li></ul>
 
 <a href="http://enderjs.com" title="Ender is a full featured package manager for your browser"><h3>Ender</h3></a><ul>
 <li>Install: <code>ender add native-promise-pool</code></li>
@@ -70,13 +70,35 @@ Create a pool of a specified concurrency that accepts promises
 
 [![Table Example Preview.](https://asciinema.org/a/4KUisfehzywXoVlFEcM2zuMdG.svg)](https://asciinema.org/a/4KUisfehzywXoVlFEcM2zuMdG)
 
-[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/table.js).
+[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/table.js)
 
 ### Simple Example
 
 [![Table Example Preview.](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w.svg)](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w)
 
-[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.js).
+[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.js)
+
+### Finally
+
+This package depends on `Promise.prototype.finally` existing, which it does on Node v10 and above.
+
+On older environments, you can provide compatibility via two methods.
+
+By passing `PromiseClass`:
+
+``` javascript
+const pool = require('native-promise-pool').create({
+    concurrency: 2,
+    PromiseClass: require('bluebird')
+})
+```
+
+Or by adding direct support to the builtin `Promise` class:
+
+``` javascript
+require('promise.prototype.finally').shim()
+const pool = require('native-promise-pool').create({concurrency: 2})
+```
 
 
 <!-- HISTORY/ -->
@@ -133,4 +155,16 @@ These amazing people have contributed code to this project:
 <!-- /BACKERS -->
 
 
-<!--LICENSE -->
+<!-- LICENSE/ -->
+
+<h2>License</h2>
+
+Unless stated otherwise all works are:
+
+<ul><li>Copyright &copy; 2018+ Benjamin Lupton</li></ul>
+
+and licensed under:
+
+<ul><li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li></ul>
+
+<!-- /LICENSE -->
