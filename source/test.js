@@ -21,7 +21,7 @@ const expectedOL = ['task 1', 'task 2', 'intended rejection', 'task 3', 'task 4'
 const expectedUL = ['task 2', 'intended rejection', 'task 1', 'task 3', 'task 5', 'task 6', 'task 4']
 
 joe.suite('native-promise-pool', function (suite, test) {
-	const pool = PromisePool.create(2)
+	const pool = PromisePool.create({ concurrency: 2 })
 	suite('works', function (suite, test) {
 		for (let i = 0; i < pools; ++i) {
 			test(`pool ${i}`, function (done) {

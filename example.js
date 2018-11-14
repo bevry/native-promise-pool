@@ -38,7 +38,7 @@ const tasks = 10
 const delay = 1000
 
 const PromisePool = require('./')
-const pool = new PromisePool(concurrency)
+const pool = new PromisePool({ concurrency })
 
 Promise.all(
 	Array(10).fill(null).map((value, i) => pool.open(() => new Promise(function (resolve) {
