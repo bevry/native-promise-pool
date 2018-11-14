@@ -24,7 +24,7 @@ class PromisePool {
 	 * Instantiate the PromisePool with the desired concurrency.
 	 * @param {Object} opts
 	 * @param {number} opts.concurrency - How many tasks to run at once.
-	 * @param {PromiseConstructor} [opts.PromiseClass=Promise] - The Promise class to use. It must support `Promise.resolve().finally(() => {})`. If you are using Node v10 or above, you don't have to do modify this, as the default `Promise` class already supports `.finally`. The alternative to passing in a custom `PromiseClass` would be polyfill the builtin `Promise` class.
+	 * @param {PromiseConstructor} [opts.PromiseClass=Promise] - The Promise class to use. It must support `Promise.resolve().finally(() => {})`. If you are using Node v10 or above, you don't have to modify this, as the default `Promise` class already supports `.finally`. An alternative to passing in a custom `PromiseClass`, is to polyfill the builtin `Promise` class.
 	 */
 	constructor ({ concurrency, PromiseClass = Promise }) {
 		/**
