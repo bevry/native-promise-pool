@@ -47,7 +47,9 @@
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc>"
   ],
-  "contributors": [],
+  "contributors": [
+    "Benjamin Lupton (http://balupton.com)"
+  ],
   "bugs": {
     "url": "https://github.com/bevry/native-promise-pool/issues"
   },
@@ -56,7 +58,7 @@
     "url": "https://github.com/bevry/native-promise-pool.git"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=10"
   },
   "editions": [
     {
@@ -69,7 +71,7 @@
         "require"
       ],
       "engines": {
-        "node": true,
+        "node": ">=10",
         "browsers": false
       }
     },
@@ -93,6 +95,9 @@
     "editions": "^2.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "assert-helpers": "^4.5.1",
     "chalk": "^2.4.1",
     "docdash": "^1.0.0",
@@ -133,7 +138,7 @@
       "edition-browsers": {
         "presets": [
           [
-            "env",
+            "@babel/preset-env",
             {
               "targets": {
                 "browsers": "defaults"
