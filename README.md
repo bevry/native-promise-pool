@@ -74,9 +74,9 @@ Create a pool of a specified concurrency that accepts functions that return prom
 
 ### Simple Example
 
-[![Table Example Preview.](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w.svg)](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w)
+[![Simple Example Preview.](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w.svg)](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w)
 
-[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.js)
+[Simple Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.js)
 
 ### Finally
 
