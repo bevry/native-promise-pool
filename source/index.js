@@ -66,17 +66,25 @@ class PromisePool {
 
 	/**
 	 * Add a task to the pool.
-	 * @param {Task} task - the task to be executed when the pool permits
-	 * @return {Promise} returns a promise that resolves once the task has resolved or rejected
+	 * @param {Task} task - The task to be executed when the pool permits.
+	 * @return {Promise} Returns a promise that resolves once the task has resolved or rejected. You should `.catch` it in case your task fails.
 	 */
 	open (task) {
+		// Grab the class to use to create our promise,
+		// so that the consumer can ensure `.finally` exists.
 		const Promise = this.PromiseClass
+
+		// Create our promise and push its resolver to the queue.
+		// This has the effect that we can queue its execution for later, instead of right now.
 		const p = new Promise((resolve) => this.queue.push(resolve))
+			// Once the resolver has fired, update the counts accordingly.
 			.finally(() => {
 				this.started--
 				this.running++
 			})
+			// Fire our our task and store the result.
 			.then(task)
+			// Update our counts accordingly, and start the next queue item if there are any.
 			.finally(() => {
 				this.running--
 				if (this.queue.length) {
@@ -85,11 +93,17 @@ class PromisePool {
 				}
 			})
 
+		// If our pool is under capacity, then start the first item in the queue.
 		if ((this.running + this.started) < this.concurrency && this.queue.length) {
 			this.started++
 			this.queue.shift()()
 		}
 
+		// Return the the promise that wraps the task,
+		// such that it resolves once the task has compelted and our wrappers have completed.
+		// This allows the user to do `Promise.all(Array<Task>.map((task) => pool.open(task)))`,
+		// so that they can queue something for when all their pooled tasks are completed.
+		// It also allows the user to do the mandatory `.catch` handling for task failures.
 		return p
 	}
 }
