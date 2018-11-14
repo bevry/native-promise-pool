@@ -10,7 +10,7 @@
 
 [![asciicast](https://asciinema.org/a/eTF5cUACRMvn3xqSZi8fKemcy.svg)](https://asciinema.org/a/eTF5cUACRMvn3xqSZi8fKemcy)
 
-[API Documentation.](https://master.native-promise-pool.bevry.surge.sh/docs/)
+[API Documentation.](http://master.native-promise-pool.bevry.surge.sh/docs/)
 
 <!--HISTORY -->
 <!--CONTRIBUTE -->
