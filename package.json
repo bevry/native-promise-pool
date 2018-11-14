@@ -1,7 +1,7 @@
 {
   "name": "native-promise-pool",
   "version": "0.0.1",
-  "description": "Create a pool of a specified concurrency that accepts promises",
+  "description": "Create a pool of a specified concurrency that accepts functions that return promises",
   "homepage": "https://github.com/bevry/native-promise-pool",
   "license": "MIT",
   "keywords": [
@@ -100,7 +100,6 @@
     "@babel/preset-env": "^7.1.6",
     "assert-helpers": "^4.5.1",
     "chalk": "^2.4.1",
-    "docdash": "^1.0.0",
     "eslint": "^5.9.0",
     "joe": "^2.0.2",
     "joe-reporter-console": "^2.0.2",

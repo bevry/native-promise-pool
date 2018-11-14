@@ -37,11 +37,11 @@ const concurrency = 3
 const tasks = 10
 const delay = 1000
 
-const PromisePool = require('./')
+const PromisePool = require('../')
 const pool = new PromisePool({ concurrency })
 
 Promise.all(
-	Array(10).fill(null).map((value, i) => pool.open(() => new Promise(function (resolve) {
+	Array(tasks).fill(null).map((value, i) => pool.open(() => new Promise(function (resolve) {
 		const name = `Task ${i}\t\tdelay ${delay}ms`
 		status(i, time() + '\t' + chalk.green('started') + '\t\t' + name)
 		setTimeout(function () {

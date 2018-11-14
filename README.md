@@ -64,9 +64,20 @@ Create a pool of a specified concurrency that accepts promises
 
 ## Usage
 
-[![asciicast](https://asciinema.org/a/eTF5cUACRMvn3xqSZi8fKemcy.svg)](https://asciinema.org/a/eTF5cUACRMvn3xqSZi8fKemcy)
-
 [API Documentation.](http://master.native-promise-pool.bevry.surge.sh/docs/)
+
+### Table Example
+
+[![Table Example Preview.](https://asciinema.org/a/4KUisfehzywXoVlFEcM2zuMdG.svg)](https://asciinema.org/a/4KUisfehzywXoVlFEcM2zuMdG)
+
+[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/table.js).
+
+### Simple Example
+
+[![Table Example Preview.](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w.svg)](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w)
+
+[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.js).
+
 
 <!-- HISTORY/ -->
 
