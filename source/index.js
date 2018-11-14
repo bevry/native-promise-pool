@@ -37,7 +37,7 @@ class PromisePool {
 		/**
 		 * The Promise class to use.
 		 * It must support `Promise.resolve().finally(() => {})`.
-		 * @type {number}
+		 * @type {PromiseConstructor}
 		 * @private
 		 */
 		this.PromiseClass = PromiseClass
