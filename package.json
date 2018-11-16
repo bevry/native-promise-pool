@@ -65,35 +65,33 @@
       "description": "esnext source code with require for modules",
       "directory": "source",
       "entry": "index.js",
-      "syntaxes": [
+      "engines": {
+        "node": "6 || 8 || 10 || 11",
+        "browsers": false
+      },
+      "tags": [
         "javascript",
         "esnext",
         "require"
-      ],
-      "engines": {
-        "node": ">=6",
-        "browsers": false
-      }
+      ]
     },
     {
       "description": "esnext compiled for browsers with require for modules",
       "directory": "edition-browsers",
       "entry": "index.js",
-      "syntaxes": [
-        "javascript",
-        "require"
-      ],
       "engines": {
         "node": false,
         "browsers": "defaults"
-      }
+      },
+      "tags": [
+        "javascript",
+        "require"
+      ]
     }
   ],
-  "main": "index.js",
+  "main": "source/index.js",
   "browser": "edition-browsers/index.js",
-  "dependencies": {
-    "editions": "^2.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -107,10 +105,11 @@
     "jsdoc": "^3.5.5",
     "logger-clearable": "^1.0.0",
     "minami": "^1.2.3",
-    "projectz": "^1.4.0",
+    "projectz": "^1.5.3",
     "surge": "^0.20.1",
     "valid-directory": "^1.0.0"
   },
+  "optionalDependencies": {},
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out",
     "our:compile": "npm run our:compile:edition-browsers",
@@ -130,8 +129,8 @@
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory && npm run our:verify:eslint",
     "our:verify:directory": "npx valid-directory",
-    "our:verify:eslint": "eslint --fix ./source",
-    "test": "node --harmony ./test.js --joe-reporter=console"
+    "our:verify:eslint": "eslint --fix ./source/**",
+    "test": "node --harmony ./source/test.js --joe-reporter=console"
   },
   "babel": {
     "env": {

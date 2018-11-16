@@ -55,7 +55,7 @@ Create a pool of a specified concurrency that accepts functions that return prom
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>native-promise-pool</code> aliases <code>native-promise-pool/index.js</code> which uses <a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
+<ul><li><code>native-promise-pool</code> aliases <code>native-promise-pool/source/index.js</code></li>
 <li><code>native-promise-pool/source/index.js</code> is esnext source code with require for modules</li>
 <li><code>native-promise-pool/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li></ul>
 
