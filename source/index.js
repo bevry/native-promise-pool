@@ -16,7 +16,7 @@ class PromisePool {
 	 * @param  {...any} args
 	 * @returns {PromisePool}
 	 */
-	static create (...args) {
+	static create(...args) {
 		return new this(...args)
 	}
 
@@ -26,7 +26,7 @@ class PromisePool {
 	 * @param {number} opts.concurrency - How many tasks to run at once.
 	 * @param {PromiseConstructor} [opts.PromiseClass=Promise] - The Promise class to use. It must support `Promise.resolve().finally(() => {})`. If you are using Node v10 or above, you don't have to modify this, as the default `Promise` class already supports `.finally`. An alternative to passing in a custom `PromiseClass`, is to polyfill the builtin `Promise` class.
 	 */
-	constructor ({ concurrency, PromiseClass = Promise }) {
+	constructor({ concurrency, PromiseClass = Promise }) {
 		/**
 		 * How many tasks to run at once.
 		 * @type {number}
@@ -69,14 +69,14 @@ class PromisePool {
 	 * @param {Task} task - The task to be executed when the pool permits.
 	 * @return {Promise} Returns a promise that resolves once the task has resolved or rejected. You should `.catch` it in case your task fails.
 	 */
-	open (task) {
+	open(task) {
 		// Grab the class to use to create our promise,
 		// so that the consumer can ensure `.finally` exists.
 		const Promise = this.PromiseClass
 
 		// Create our promise and push its resolver to the queue.
 		// This has the effect that we can queue its execution for later, instead of right now.
-		const p = new Promise((resolve) => this.queue.push(resolve))
+		const p = new Promise(resolve => this.queue.push(resolve))
 			// Once the resolver has fired, update the counts accordingly.
 			.finally(() => {
 				this.started--
@@ -94,7 +94,7 @@ class PromisePool {
 			})
 
 		// If our pool is under capacity, then start the first item in the queue.
-		if ((this.running + this.started) < this.concurrency && this.queue.length) {
+		if (this.running + this.started < this.concurrency && this.queue.length) {
 			this.started++
 			this.queue.shift()()
 		}
