@@ -1,6 +1,6 @@
 {
   "name": "native-promise-pool",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Create a pool of a specified concurrency that accepts functions that return promises",
   "homepage": "https://github.com/bevry/native-promise-pool",
   "license": "MIT",
@@ -42,16 +42,14 @@
       "travisTLD": "com"
     }
   },
-  "funding": {
-    "type": "cooperative",
-    "url": "https://bevry.me/fund"
-  },
+  "funding": "https://bevry.me/fund",
   "author": "2018+ Benjamin Lupton <b@lupton.cc>",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc>"
   ],
   "contributors": [
-    "Benjamin Lupton (http://balupton.com)"
+    "Benjamin Lupton (http://balupton.com)",
+    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/native-promise-pool/issues"
@@ -99,7 +97,7 @@
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
-    "assert-helpers": "^4.9.7",
+    "assert-helpers": "4.10.0",
     "bluebird": "^3.7.1",
     "chalk": "^3.0.0",
     "eslint": "^6.6.0",
@@ -107,11 +105,11 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
-    "kava": "^3.1.0",
+    "kava": "^3.2.0",
     "logger-clearable": "^1.0.1",
     "minami": "^1.2.3",
-    "prettier": "^1.19.0",
-    "projectz": "^1.7.5",
+    "prettier": "^1.19.1",
+    "projectz": "^1.10.0",
     "surge": "^0.21.3",
     "valid-directory": "^1.0.0"
   },
