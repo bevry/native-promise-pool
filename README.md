@@ -33,50 +33,21 @@ Create a pool of a specified concurrency that accepts functions that return prom
 <!-- /DESCRIPTION -->
 
 
-<!-- INSTALL/ -->
-
-<h2>Install</h2>
-
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
-<ul>
-<li>Install: <code>npm install --save native-promise-pool</code></li>
-<li>Require: <code>require('native-promise-pool')</code></li>
-</ul>
-
-<a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
-
-``` html
-<script type="module">
-    import * as pkg from '//dev.jspm.io/native-promise-pool'
-</script>
-```
-
-<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
-
-<p>This package is published with the following editions:</p>
-
-<ul><li><code>native-promise-pool</code> aliases <code>native-promise-pool/source/index.js</code></li>
-<li><code>native-promise-pool/source/index.js</code> is esnext source code with require for modules</li>
-<li><code>native-promise-pool/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li></ul>
-
-<h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
-
-This project provides its type information via inline <a href="http://usejsdoc.org" title="JSDoc is an API documentation generator for JavaScript, similar to Javadoc or phpDocumentor">JSDoc Comments</a>. To make use of this in <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a>, set your <code>maxNodeModuleJsDepth</code> compiler option to `5` or thereabouts. You can accomlish this via your `tsconfig.json` file like so:
-
-``` json
-{
-  "compilerOptions": {
-    "maxNodeModuleJsDepth": 5
-  }
-}
-```
-
-<!-- /INSTALL -->
-
-
 ## Usage
 
-[API Documentation.](http://master.native-promise-pool.bevry.surge.sh/docs/)
+[Complete API Documentation.](http://master..bevry.surge.sh/docs/globals.html)
+
+To use, just make a promise pool with the specified concurrency, then wrap the method in a `pool.open(() => /* the code that you want pooled */)`. The callback is necessary, as otherwise the code that you want pooled will execute before it is pooled. By pooling it, it executes once the pool entry is called.
+
+```javascript
+import PromisePool from 'native-promise-pool'
+const pool = new PromisePool(2) // 5 tasks at once
+await Promise.all([
+    pool.open(() => /* the thing that takes a while */)
+    pool.open(() => /* the thing that takes a while */)
+    pool.open(() => /* the thing that takes a while, will run after the first two have completed */)
+])
+```
 
 ### Table Example
 
@@ -100,23 +71,58 @@ This project provides its type information via inline <a href="http://usejsdoc.o
 
 This package depends on `Promise.prototype.finally` existing, which it does on Node v10 and above.
 
-On older environments, you can provide compatibility via two methods.
+On older environments, you must use a shim, like so:
 
-By passing `PromiseClass`:
-
-``` javascript
-const pool = require('native-promise-pool').create({
-    concurrency: 2,
-    PromiseClass: require('bluebird')
-})
-```
-
-Or by adding direct support to the builtin `Promise` class:
-
-``` javascript
+```javascript
 require('promise.prototype.finally').shim()
-const pool = require('native-promise-pool').create({concurrency: 2})
+const pool = require('native-promise-pool').create({ concurrency: 2 })
 ```
+
+<!-- INSTALL/ -->
+
+<h2>Install</h2>
+
+<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
+<ul>
+<li>Install: <code>npm install --save native-promise-pool</code></li>
+<li>Import: <code>import pkg from ('native-promise-pool')</code></li>
+<li>Require: <code>const pkg = require('native-promise-pool').default</code></li>
+</ul>
+
+<a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
+
+``` html
+<script type="module">
+    import pkg from '//cdn.pika.dev/native-promise-pool/^3.0.0'
+</script>
+```
+
+<a href="https://unpkg.com" title="unpkg is a fast, global content delivery network for everything on npm"><h3>unpkg</h3></a>
+
+``` html
+<script type="module">
+    import pkg from '//unpkg.com/native-promise-pool@^3.0.0'
+</script>
+```
+
+<a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
+
+``` html
+<script type="module">
+    import pkg from '//dev.jspm.io/native-promise-pool@3.0.0'
+</script>
+```
+
+<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
+
+<p>This package is published with the following editions:</p>
+
+<ul><li><code>native-promise-pool/source/index.ts</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> source code with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>native-promise-pool/edition-browsers/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>native-promise-pool</code> aliases <code>native-promise-pool/edition-esnext/index.js</code></li>
+<li><code>native-promise-pool/edition-esnext/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
+
+<!-- /INSTALL -->
 
 
 <!-- HISTORY/ -->
@@ -165,7 +171,8 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/native-promise-pool/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/native-promise-pool">view contributions</a></li>
+<ul><li>Benjamin Lupton</li>
+<li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/native-promise-pool/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/native-promise-pool">view contributions</a></li>
 <li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/native-promise-pool/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/native-promise-pool">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/native-promise-pool/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>

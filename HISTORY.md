@@ -1,5 +1,12 @@
 # History
 
+## v3.0.0 2020 April 19
+
+-   Rewrote in TypeScript
+-   `new PromisePool({concurrency})` has changed to `new PromisePool(concurrency)`
+-   Support for specifying the promise class has been removed now that Node v10 is now the minimum supported LTS version
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.3.0 2019 December 10
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

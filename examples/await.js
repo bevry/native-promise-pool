@@ -10,7 +10,7 @@ const pool = new PromisePool({ concurrency: 2 })
 // wait 3 seconds
 // log the value
 // and resolve the promise with the value
-function wait (value) {
+function wait(value) {
 	return new Promise(function (resolve) {
 		setTimeout(function () {
 			console.log(value + ' done')
@@ -20,12 +20,12 @@ function wait (value) {
 }
 
 // Async/await wrapper
-async function batch (batchName) {
+async function batch(batchName) {
 	// add three tasks to the pool, running sequentially for the batch
 	const results = [
 		await pool.open(() => wait(`${batchName} task 1`)),
 		await pool.open(() => wait(`${batchName} task 2`)),
-		await pool.open(() => wait(`${batchName} task 3`))
+		await pool.open(() => wait(`${batchName} task 3`)),
 	]
 	console.log(`${batchName} compelted with:\n\t${results.join('\n\t')}`)
 }
