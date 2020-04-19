@@ -1,9 +1,9 @@
 'use strict'
 
-const PromisePool = require('../')
+const PromisePool = require('../').default
 
 // create a pool doing 2 tasks at a time
-const pool = new PromisePool({ concurrency: 2 })
+const pool = new PromisePool(2)
 
 // take a value
 // return a promise
