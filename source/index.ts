@@ -1,5 +1,5 @@
 /** Promise Pool */
-export default class PromisePool<Result extends any> {
+export default class PromisePool<EveryItemResult extends any> {
 	/** How many tasks to run at once. */
 	public concurrency: number
 
@@ -13,7 +13,7 @@ export default class PromisePool<Result extends any> {
 	protected readonly queue: Array<Function>
 
 	/** Instantiate the PromisePool with the desired concurrency. */
-	constructor(concurrency: number) {
+	constructor(concurrency: number = 0) {
 		this.concurrency = concurrency
 		this.running = 0
 		this.started = 0
@@ -21,10 +21,12 @@ export default class PromisePool<Result extends any> {
 	}
 
 	/** Add a task to the pool. */
-	open(task: () => Promise<Result> | Result): Promise<Result> {
+	open<AnyItemResult extends EveryItemResult>(
+		task: () => Promise<AnyItemResult> | AnyItemResult
+	): Promise<AnyItemResult> {
 		// Create our promise and push its resolver to the queue.
 		// This has the effect that we can queue its execution for later, instead of right now.
-		const p = new Promise<Result>((resolve) => this.queue.push(resolve))
+		const p = new Promise<AnyItemResult>((resolve) => this.queue.push(resolve))
 			// Once the resolver has fired, update the counts accordingly.
 			.finally(() => {
 				this.started--
@@ -43,7 +45,10 @@ export default class PromisePool<Result extends any> {
 			})
 
 		// If our pool is under capacity, then start the first item in the queue.
-		if (this.running + this.started < this.concurrency && this.queue.length) {
+		if (
+			this.queue.length &&
+			(!this.concurrency || this.running + this.started < this.concurrency)
+		) {
 			this.started++
 			const resolver = this.queue.shift() as Function
 			resolver()

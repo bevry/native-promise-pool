@@ -1,6 +1,6 @@
 {
   "name": "native-promise-pool",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Create a pool of a specified concurrency that accepts functions that return promises",
   "homepage": "https://github.com/bevry/native-promise-pool",
   "license": "MIT",
