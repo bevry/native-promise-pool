@@ -93,7 +93,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/native-promise-pool/^3.2.0'
+    import pkg from '//cdn.pika.dev/native-promise-pool/^3.3.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/native-promise-pool@^3.2.0'
+    import pkg from '//unpkg.com/native-promise-pool@^3.3.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/native-promise-pool@3.2.0'
+    import pkg from '//dev.jspm.io/native-promise-pool@3.3.0'
 </script>
 ```
 
@@ -151,7 +151,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 These amazing people are maintaining this project:
 
-<ul><li>Benjamin Lupton</li></ul>
+<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/native-promise-pool/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/native-promise-pool">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -171,9 +171,7 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li>Benjamin Lupton</li>
-<li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/native-promise-pool/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/native-promise-pool">view contributions</a></li>
-<li><a href="http://balupton.com">Benjamin Lupton</a></li></ul>
+<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/native-promise-pool/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/native-promise-pool">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/native-promise-pool/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
@@ -186,7 +184,7 @@ These amazing people have contributed code to this project:
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; 2018+ Benjamin Lupton</li></ul>
+<ul><li>Copyright &copy; 2018+ <a href="https://balupton.com">Benjamin Lupton</a></li></ul>
 
 and licensed under:
 
