@@ -93,7 +93,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/native-promise-pool/^3.4.0'
+    import pkg from '//cdn.pika.dev/native-promise-pool/^3.5.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/native-promise-pool@^3.4.0'
+    import pkg from '//unpkg.com/native-promise-pool@^3.5.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/native-promise-pool@3.4.0'
+    import pkg from '//dev.jspm.io/native-promise-pool@3.5.0'
 </script>
 ```
 
