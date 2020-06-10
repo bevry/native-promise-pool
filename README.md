@@ -89,11 +89,17 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 <li>Require: <code>const pkg = require('native-promise-pool').default</code></li>
 </ul>
 
+<a href="https://deno.land" title="Deno is a secure runtime for JavaScript and TypeScript, it is an alternative for Node.js"><h3>Deno</h3></a>
+
+``` typescript
+import pkg from 'https://unpkg.com/native-promise-pool@^3.6.0/edition-deno/index.ts'
+```
+
 <a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/native-promise-pool/^3.5.0'
+    import pkg from '//cdn.pika.dev/native-promise-pool/^3.6.0'
 </script>
 ```
 
@@ -101,7 +107,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/native-promise-pool@^3.5.0'
+    import pkg from '//unpkg.com/native-promise-pool@^3.6.0'
 </script>
 ```
 
@@ -109,7 +115,7 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/native-promise-pool@3.5.0'
+    import pkg from '//dev.jspm.io/native-promise-pool@3.6.0'
 </script>
 ```
 
@@ -120,7 +126,8 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 <ul><li><code>native-promise-pool/source/index.ts</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> source code with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
 <li><code>native-promise-pool</code> aliases <code>native-promise-pool/edition-esnext/index.js</code></li>
 <li><code>native-promise-pool/edition-esnext/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li>
-<li><code>native-promise-pool/edition-browsers/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#10th_Edition_-_ECMAScript_2019" title="ECMAScript ES2019">ES2019</a> for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li></ul>
+<li><code>native-promise-pool/edition-browsers/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#10th_Edition_-_ECMAScript_2019" title="ECMAScript ES2019">ES2019</a> for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>native-promise-pool/edition-deno/index.ts</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> source code made to be compatible with <a href="https://deno.land" title="Deno is a secure runtime for JavaScript and TypeScript, it is an alternative to Node.js">Deno</a></li></ul>
 
 <!-- /INSTALL -->
 
