@@ -53,19 +53,19 @@ await Promise.all([
 
 [![Table Example Preview.](https://asciinema.org/a/OLI8jWnvaXuqrfXHMVGtKV1KH.svg)](https://asciinema.org/a/OLI8jWnvaXuqrfXHMVGtKV1KH)
 
-[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/table.js)
+[Table Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/table.cjs)
 
 ### Simple Example
 
 [![Simple Example Preview.](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w.svg)](https://asciinema.org/a/1lbq2PEEezF6zsGuUH09Rgh5w)
 
-[Simple Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.js)
+[Simple Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/simple.cjs)
 
 ### Await Example
 
 [![Await Example Preview.](https://asciinema.org/a/3uhFqw4AUjMNuifuesQqHW0bd.svg)](https://asciinema.org/a/3uhFqw4AUjMNuifuesQqHW0bd)
 
-[Await Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/await.js)
+[Await Example Source.](https://github.com/bevry/native-promise-pool/blob/master/examples/await.cjs)
 
 ### Finally
 
