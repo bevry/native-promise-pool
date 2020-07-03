@@ -1,5 +1,6 @@
 'use strict'
 
+// Import
 const PromisePool = require('../').default
 
 // create a pool doing 2 tasks at a time
