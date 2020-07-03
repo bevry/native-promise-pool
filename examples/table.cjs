@@ -1,8 +1,17 @@
 'use strict'
 
+// Import
 const chalk = require('chalk')
 const logger = require('logger-clearable').create()
+const PromisePool = require('../').default
 
+// Prepare
+const concurrency = 3
+const tasks = 10
+const delay = 1000
+const pool = new PromisePool(concurrency)
+
+// Helpers
 const logs = []
 const statuses = {}
 function time() {
@@ -32,13 +41,7 @@ function message(heading, message) {
 	)
 }
 
-const concurrency = 3
-const tasks = 10
-const delay = 1000
-
-const PromisePool = require('../').default
-const pool = new PromisePool(concurrency)
-
+// Example
 Promise.all(
 	Array(tasks)
 		.fill(null)
