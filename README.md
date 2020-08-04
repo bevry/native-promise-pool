@@ -92,14 +92,14 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 <a href="https://deno.land" title="Deno is a secure runtime for JavaScript and TypeScript, it is an alternative for Node.js"><h3>Deno</h3></a>
 
 ``` typescript
-import pkg from 'https://unpkg.com/native-promise-pool@^3.12.0/edition-deno/index.ts'
+import pkg from 'https://unpkg.com/native-promise-pool@^3.13.0/edition-deno/index.ts'
 ```
 
 <a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/native-promise-pool/^3.12.0'
+    import pkg from '//cdn.pika.dev/native-promise-pool/^3.13.0'
 </script>
 ```
 
@@ -107,7 +107,7 @@ import pkg from 'https://unpkg.com/native-promise-pool@^3.12.0/edition-deno/inde
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/native-promise-pool@^3.12.0'
+    import pkg from '//unpkg.com/native-promise-pool@^3.13.0'
 </script>
 ```
 
@@ -115,7 +115,7 @@ import pkg from 'https://unpkg.com/native-promise-pool@^3.12.0/edition-deno/inde
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/native-promise-pool@3.12.0'
+    import pkg from '//dev.jspm.io/native-promise-pool@3.13.0'
 </script>
 ```
 
