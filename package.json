@@ -165,6 +165,7 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "devDependencies": {
+    "@bevry/ansi": "^3.0.0",
     "@bevry/update-contributors": "^1.17.0",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
@@ -174,6 +175,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "kava": "^5.13.0",
+    "logger-clearable": "^3.14.0",
     "make-deno-edition": "^1.2.0",
     "prettier": "^2.1.2",
     "projectz": "^2.16.0",

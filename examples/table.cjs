@@ -1,7 +1,7 @@
 'use strict'
 
 // Import
-const chalk = require('chalk')
+const ansi = require('@bevry/ansi')
 const logger = require('logger-clearable').create()
 const PromisePool = require('../').default
 
@@ -51,15 +51,15 @@ Promise.all(
 					() =>
 						new Promise(function (resolve) {
 							const name = `Task ${i}\t\tdelay ${delay}ms`
-							status(i, time() + '\t' + chalk.green('started') + '\t\t' + name)
+							status(i, time() + '\t' + ansi.green('started') + '\t\t' + name)
 							setTimeout(function () {
-								status(i, time() + '\t' + chalk.red('finished') + '\t' + name)
+								status(i, time() + '\t' + ansi.red('finished') + '\t' + name)
 								resolve(name)
 							}, delay)
 						})
 				)
 				.then(function (result) {
-					status(i, time() + '\t' + chalk.blue('result') + '\t\t' + result)
+					status(i, time() + '\t' + ansi.blue('result') + '\t\t' + result)
 					return result
 				})
 		)
