@@ -25,7 +25,7 @@ function status(i, status) {
 		// '== LOGS ==\n' +
 		// logs.join('\n') +
 		// '\n\n' +
-		'== STATUS ===\n' + Object.values(statuses).join('\n')
+		'== STATUS ===\n' + Object.values(statuses).join('\n'),
 	)
 }
 function message(heading, message) {
@@ -37,7 +37,7 @@ function message(heading, message) {
 			Object.values(statuses).join('\n') +
 			'\n\n' +
 			`== ${heading} ===\n` +
-			message
+			message,
 	)
 }
 
@@ -56,11 +56,11 @@ Promise.all(
 								status(i, time() + '\t' + ansi.red('finished') + '\t' + name)
 								resolve(name)
 							}, delay)
-						})
+						}),
 				)
 				.then(function (result) {
 					status(i, time() + '\t' + ansi.blue('result') + '\t\t' + result)
 					return result
-				})
-		)
+				}),
+		),
 ).then((results) => message('DONE', results.join('\n')))

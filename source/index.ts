@@ -22,7 +22,7 @@ export default class PromisePool<EveryItemResult extends any> {
 
 	/** Add a task to the pool. */
 	open<AnyItemResult extends EveryItemResult>(
-		task: () => Promise<AnyItemResult> | AnyItemResult
+		task: () => Promise<AnyItemResult> | AnyItemResult,
 	): Promise<AnyItemResult> {
 		// Create our promise and push its resolver to the queue.
 		// This has the effect that we can queue its execution for later, instead of right now.
