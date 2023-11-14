@@ -52,8 +52,8 @@ kava.suite('native-promise-pool', function (suite, test) {
 								ul.push(err.message || err)
 								console.error(err)
 								return err
-							}),
-					),
+							})
+					)
 				).then(function (ol) {
 					deepEqual(ol, expectedOL, 'ordered results')
 					deepEqual(ul, expectedUL, 'unordered results')
