@@ -91,14 +91,14 @@ const pool = require('native-promise-pool').create({ concurrency: 2 })
 <a href="https://deno.land" title="Deno is a secure runtime for JavaScript and TypeScript, it is an alternative for Node.js"><h3>Deno</h3></a>
 
 ``` typescript
-import pkg from 'https://unpkg.com/native-promise-pool@^3.22.0/edition-deno/index.ts'
+import pkg from 'https://unpkg.com/native-promise-pool@^3.23.0/edition-deno/index.ts'
 ```
 
 <a href="https://www.skypack.dev" title="Skypack is a JavaScript Delivery Network for modern web apps"><h3>Skypack</h3></a>
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.skypack.dev/native-promise-pool@^3.22.0'
+    import pkg from '//cdn.skypack.dev/native-promise-pool@^3.23.0'
 </script>
 ```
 
@@ -106,7 +106,7 @@ import pkg from 'https://unpkg.com/native-promise-pool@^3.22.0/edition-deno/inde
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/native-promise-pool@^3.22.0'
+    import pkg from '//unpkg.com/native-promise-pool@^3.23.0'
 </script>
 ```
 
@@ -114,7 +114,7 @@ import pkg from 'https://unpkg.com/native-promise-pool@^3.22.0/edition-deno/inde
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/native-promise-pool@3.22.0'
+    import pkg from '//dev.jspm.io/native-promise-pool@3.23.0'
 </script>
 ```
 
