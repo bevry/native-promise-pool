@@ -1,6 +1,6 @@
 {
   "name": "native-promise-pool",
-  "version": "3.24.0",
+  "version": "3.25.0",
   "description": "Create a pool of a specified concurrency that accepts functions that return promises",
   "homepage": "https://github.com/bevry/native-promise-pool",
   "license": "Artistic-2.0",
@@ -199,29 +199,29 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "editions": "^6.13.0"
+    "editions": "^6.16.0"
   },
   "devDependencies": {
-    "@bevry/ansi": "^6.4.0",
+    "@bevry/ansi": "^6.5.0",
     "@bevry/update-contributors": "^1.23.0",
-    "@types/node": "^20.9.3",
+    "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
-    "assert-helpers": "^11.5.0",
+    "assert-helpers": "^11.6.0",
     "eslint": "^8.54.0",
-    "eslint-config-bevry": "^5.1.0",
+    "eslint-config-bevry": "^5.2.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "kava": "^7.3.0",
-    "logger-clearable": "^4.3.0",
-    "make-deno-edition": "^1.3.0",
+    "kava": "^7.4.0",
+    "logger-clearable": "^4.4.0",
+    "make-deno-edition": "^2.0.0",
     "prettier": "^3.1.0",
-    "projectz": "^3.2.0",
+    "projectz": "^3.3.0",
     "surge": "^0.23.1",
     "typedoc": "^0.25.3",
     "typescript": "5.2.2",
-    "valid-directory": "^4.4.0",
-    "valid-module": "^2.4.0"
+    "valid-directory": "^4.5.0",
+    "valid-module": "^2.5.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
