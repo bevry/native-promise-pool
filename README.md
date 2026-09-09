@@ -39,7 +39,7 @@ To use, just make a promise pool with the specified concurrency, then wrap the m
 
 ```javascript
 import PromisePool from 'native-promise-pool'
-const pool = new PromisePool(2) // 5 tasks at once
+const pool = new PromisePool(2) // 2 tasks at once
 await Promise.all([
     pool.open(() => /* the thing that takes a while */)
     pool.open(() => /* the thing that takes a while */)
